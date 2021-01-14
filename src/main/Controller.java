@@ -13,8 +13,8 @@ import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
     DataBase DB = new DataBase();
-    @FXML private TextField txtout;
-    @FXML private TextArea txt_lPlate;
+    @FXML private TextField txt_lPlate;
+    @FXML private TextArea txtout;
     @FXML private Button quicksearch;
 
     public void getVehicle(MouseEvent event) {
@@ -25,12 +25,21 @@ public class Controller implements Initializable {
         {
             qsearch=true;
         }
-        ArrayList cars = DB.search("M",qsearch);
-        System.out.print(cars.toString());
+        ArrayList cars = DB.search(txt_lPlate.getText(),qsearch);
+        String txt="";
+        if (cars.size()!=0){
+            for (int i=0;i<cars.size();i++){
+                txt= txt + cars.get(i).toString();
+            }
+        }
+        else {
+            txt="car not found";
+        }
+        txtout.setText(txt);
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //txtout.setEditable(false);
+        txtout.setEditable(false);
     }
 }
