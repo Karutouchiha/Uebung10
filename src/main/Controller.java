@@ -27,7 +27,7 @@ public class Controller implements Initializable {
         }
         ArrayList cars = DB.search(txt_lPlate.getText().toUpperCase(),qsearch);
         String txt="";
-        if (cars.size()!=0){
+        if (cars.size()!=0 && !cars.contains(null)){
             for (int i=0;i<cars.size();i++){
                 txt= txt + cars.get(i).toString();
             }
