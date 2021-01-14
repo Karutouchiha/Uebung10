@@ -18,22 +18,20 @@ public class DataBase {
         }
     }
     public ArrayList<Vehicle> search(String licencePlate, boolean exact){
-        ArrayList<Vehicle> car = new ArrayList();
+        ArrayList<Vehicle> cars = new ArrayList();
         if (exact){
             try {
-                car.add(CarDB.get(licencePlate));
+                cars.add(CarDB.get(licencePlate));
             }
-            catch (Exception x){
-                return null;
-            }
+            catch (Exception x){ }
         }
         else {
-            for (int i=0; i < CarDB.size(); i++) {
-                if (CarDB.keySet().contains(licencePlate)) {
-                    car.add(CarDB.get(CarDB.keySet()));
+                for (String key: CarDB.keySet()) {
+                    if (key.contains(licencePlate)) {
+                        cars.add(CarDB.get(key));
+                    }
                 }
-            }
         }
-        return car;
+        return cars;
     }
 }

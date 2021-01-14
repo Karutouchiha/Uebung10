@@ -33,14 +33,14 @@
                   </Text>
                   <HBox prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
                      <children>
-                        <Button fx:id="search" mnemonicParsing="false" prefHeight="42.0" prefWidth="230.0" text="Search..." />
-                        <Button fx:id="quicksearch" mnemonicParsing="false" prefHeight="42.0" prefWidth="245.0" text="Quick Search" />
+                        <Button fx:id="search" mnemonicParsing="false" onMouseClicked="#getVehicle" prefHeight="42.0" prefWidth="230.0" text="Search..." />
+                        <Button fx:id="quicksearch" mnemonicParsing="false" onMouseClicked="#getVehicle" prefHeight="42.0" prefWidth="245.0" text="Quick Search" />
                      </children>
                   </HBox>
-                  <TextField fx:id="txt_lPlate" prefHeight="34.0" prefWidth="263.0" promptText="Enter licence plate" GridPane.rowIndex="1" />
+                  <TextField prefHeight="34.0" prefWidth="263.0" promptText="Enter licence plate" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-            <TextArea fx:id="txtout" prefHeight="200.0" prefWidth="200.0" />
+            <TextArea prefHeight="200.0" prefWidth="200.0" />
          </children>
       </VBox>
    </children>
