@@ -14,7 +14,6 @@ public class DataBase {
             String licencePlate = generator.getRandomLicencePlate();
             Vehicle v = new Vehicle(generator.getRandomColor(), generator.getRandomName(), manufacturer, generator.getRandomModel(manufacturer), licencePlate);
             CarDB.put(licencePlate, v);
-            System.out.print("Licence Plate:" + licencePlate);
         }
     }
     public ArrayList<Vehicle> search(String licencePlate, boolean exact){
